@@ -1,0 +1,92 @@
+@import '../../assets/scss/variables';
+
+.box-select {
+	height: 72px;
+	position: relative;
+
+	label {
+		display: block;
+		font-size: 16px;
+		line-height: 1.14;
+		opacity: .6;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+	}
+
+	.selected {
+		border-bottom: 1px solid $light-grey;
+		cursor: pointer;
+		display: flex;
+		font-size: 16px;
+		justify-content: space-between;
+		padding: 24px 0 10px;
+
+		.item-selected {
+			max-width: 100%;
+			overflow: hidden;
+			padding-right: 8px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.arrow {
+			display: flex;
+			justify-content: center;
+			transition: 0.15s ease-in-out;
+			transform: rotate(90deg);
+		}
+
+		&.open {
+			border-radius: 4px 4px 0 0;
+
+			.arrow {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	.list-select {
+		background: $white;
+		border-radius: 0 0 4px 4px;
+		max-height: 0;
+		overflow-y: auto;
+		position: absolute;
+		top: 55px;
+		transition: 0.15s ease-in-out;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			border-width: 1px;
+			max-height: 160px;
+		}
+
+		.item {
+			border-bottom: 1px solid $light-grey;
+			cursor: pointer;
+			padding: 10px 8px;
+			transition: none;
+
+			&:last-of-type {
+				border-bottom-width: 0;
+			}
+
+			&:hover {
+				background-color: lighten($primary, 10%);
+				color: $white;
+			}
+
+			&.check {
+				background-color: $primary;
+				color: $white;
+			}
+		}
+	}
+
+	.msg-error {
+		color: $primary;
+		font-size: 12px;
+		margin-top: 4px;
+	}
+}

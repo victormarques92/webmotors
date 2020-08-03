@@ -1,0 +1,12 @@
+@import '../../assets/scss/variables';
+
+.nav {
+	align-items: center;
+	background-color: $white;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .07);
+	display: flex;
+	height: 64px;
+	justify-content: space-between;
+	margin-bottom: 32px;
+	padding: 0 16px;
+}
